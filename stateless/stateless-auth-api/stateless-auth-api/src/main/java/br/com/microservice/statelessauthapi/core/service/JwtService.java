@@ -58,7 +58,7 @@ public class JwtService {
                     .parserBuilder()
                     .setSigningKey(generateSign())
                     .build()
-                    .parseClaimsJwt(accessToken)
+                    .parseClaimsJws(accessToken)
                     .getBody();
         } catch (Exception ex){
             throw new AuthenticationException("Invalid token " + ex.getMessage());
